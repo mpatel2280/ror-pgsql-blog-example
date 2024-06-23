@@ -1,0 +1,31 @@
+https://guides.rubyonrails.org/getting_started.html
+https://www.ruby-lang.org/en/documentation/
+https://github.com/EbookFoundation/free-programming-books/blob/master/books/free-programming-books-langs.md#ruby
+
+sudo apt install ruby 
+ruby --version
+ruby 3.2.3 (2024-01-18 revision 52bb2ac0a6) [x86_64-linux-gnu]
+
+sudo apt install sqlite3
+sqlite3 --version
+3.45.1 2024-01-30 16:01:20 e876e51a0ed5c5b3126f52e532044363a014bc594cfefa87ffb5b82257ccalt1 (64-bit)
+
+
+
+gem install rails (if err then try -> sudo apt install ruby-railties)
+rails --version
+Rails 6.1.7.3
+
+
+sudo -i -u postgres
+psql
+
+# list all dbs 
+\l 
+
+# select db 
+\c
+
+# show all tables 
+\dt 
+
