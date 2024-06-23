@@ -44,3 +44,16 @@ rake custom:hello
 
 # Rails Scaffolding
 rails generate scaffold User
+
+#create new gem
+https://bundler.io/guides/creating_gem.html
+bundle gem hello_gem
+gem build hello_gem.gemspec
+cd ..
+gem install ./hello_gem/hello_gem-0.1.0.gem
+# Gemfile
+gem 'hello_gem', path: './hello_gem/'
+bundle install
+
+
+
