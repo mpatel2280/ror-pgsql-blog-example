@@ -12,6 +12,8 @@ class PostsController < ApplicationController
   
     # GET /posts/1
     def show
+        @post = Post.find(params[:id])
+        HelloGem.hello_from_gem(@post)
     end
   
     # GET /posts/new

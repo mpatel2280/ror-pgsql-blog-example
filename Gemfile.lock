@@ -1,3 +1,8 @@
+PATH
+  remote: hello_gem
+  specs:
+    hello_gem (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -242,6 +247,7 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+  hello_gem!
   importmap-rails
   jbuilder
   pg
