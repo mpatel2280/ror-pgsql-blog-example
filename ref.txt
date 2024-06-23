@@ -24,8 +24,11 @@ psql
 \l 
 
 # select db 
-\c
+\c ror_blog
 
 # show all tables 
 \dt 
 
+
+# Rake 
+rake custom:hello
