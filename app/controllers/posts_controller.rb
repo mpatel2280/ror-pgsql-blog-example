@@ -1,5 +1,8 @@
 # app/controllers/posts_controller.rb
 class PostsController < ApplicationController
+    include Loggable
+    include Trackable
+
     before_action :set_post, only: [:show, :edit, :update, :destroy]
   
     # GET /posts
@@ -34,6 +37,8 @@ class PostsController < ApplicationController
     # PATCH/PUT /posts/1
     def update
       if @post.update(post_params)
+        log("Post updated")
+        track_change
         redirect_to @post, notice: 'Post was successfully updated.'
       else
         render :edit
