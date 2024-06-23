@@ -30,5 +30,17 @@ psql
 \dt 
 
 
+# DB Migrate
+bin/rails db:migrate 
+OR.........
+rake db:migrate
+
+#Migrate Specific file only
+rake db:migrate:up VERSION=20240623155225
+rake db:migrate:down VERSION=20240623155225
+
 # Rake 
 rake custom:hello
+
+# Rails Scaffolding
+rails generate scaffold User
