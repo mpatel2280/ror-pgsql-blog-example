@@ -20,7 +20,7 @@ development:
 
 test:
   <<: *default
-  database: ror_blog
+  database: ror_blog_test
 
 #################################################################################
 # default: &default
