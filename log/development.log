@@ -1637,3 +1637,82 @@ Processing by PostsController#show as HTML
 Completed 200 OK in 8ms (Views: 3.5ms | ActiveRecord: 0.5ms | Allocations: 1782)
 
 
+Started GET "/posts" for ::1 at 2024-06-23 20:11:45 +0530
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:12
+  Rendered posts/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1016)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 2118)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.6ms | Allocations: 2361)
+
+
+Started GET "/posts" for ::1 at 2024-06-23 20:11:47 +0530
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:12
+  Rendered posts/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1016)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 2107)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.8ms | Allocations: 2350)
+
+
+Started GET "/posts" for ::1 at 2024-06-23 20:11:49 +0530
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:12
+  Rendered posts/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1016)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 2114)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.6ms | Allocations: 2357)
+
+
+Started GET "/posts/new" for ::1 at 2024-06-23 20:11:50 +0530
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 4.8ms | Allocations: 738)
+  Rendered posts/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 945)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 1852)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.0ms | Allocations: 2169)
+
+
+Started POST "/posts" for ::1 at 2024-06-23 20:12:04 +0530
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"Seventh Title", "content"=>"Seventh Title Content here"}, "commit"=>"Create Post"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:30:in `create'
+  [1m[36mPost Create (2.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Seventh title"], ["content", "Seventh Title Content here"], ["created_at", "2024-06-23 14:42:04.907104"], ["updated_at", "2024-06-23 14:42:04.907104"]]
+  ↳ app/controllers/posts_controller.rb:30:in `create'
+  [1m[36mTRANSACTION (17.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:30:in `create'
+Redirected to http://localhost:3000/posts/7
+Completed 302 Found in 26ms (ActiveRecord: 20.2ms | Allocations: 2000)
+
+
+Started GET "/posts/7" for ::1 at 2024-06-23 20:12:04 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:57:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 63)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 1169)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.1ms | Allocations: 1795)
+
+
+Started GET "/posts" for ::1 at 2024-06-23 20:12:06 +0530
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:12
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1115)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 2222)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.7ms | Allocations: 2465)
+
+
