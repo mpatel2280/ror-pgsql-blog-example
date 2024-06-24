@@ -3,6 +3,7 @@ class PostsController < ApplicationController
     include Loggable
     include Trackable
 
+    after_action :log_action, only: [:create, :update, :destroy]
     before_action :set_post, only: [:show, :edit, :update, :destroy]
   
     # GET /posts
@@ -64,5 +65,11 @@ class PostsController < ApplicationController
       def post_params
         params.require(:post).permit(:title, :content)
       end
+
+    private 
+      #After Action Filter
+      def log_action
+        Rails.logger.info "============Post action completed: #{action_name}"
+      end 
   end
   

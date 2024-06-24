@@ -15,7 +15,7 @@ sqlite3 --version
 gem install rails (if err then try -> sudo apt install ruby-railties)
 rails --version
 Rails 6.1.7.3
-
+Rails 7.1.3.4
 
 sudo -i -u postgres
 psql
@@ -55,5 +55,7 @@ gem install ./hello_gem/hello_gem-0.1.0.gem
 gem 'hello_gem', path: './hello_gem/'
 bundle install
 
+#Toggle cache 
+bin/rails dev:cache
 
 
