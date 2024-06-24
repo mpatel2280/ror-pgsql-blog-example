@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     before_action :set_post, only: [:show, :edit, :update, :destroy]
   
     helper :my_custom
-    
+
     # GET /posts
     def index
       @posts = Post.all
@@ -33,6 +33,7 @@ class PostsController < ApplicationController
       @post = Post.new(post_params)
   
       if @post.save
+        Resque.enqueue(PostCreatedJob, @post.id)
         redirect_to @post, notice: 'Post was successfully created.'
       else
         render :new

@@ -61,3 +61,16 @@ bin/rails dev:cache
 
 #Custom Helpers
 rails generate helper MyCustomHelper
+
+
+#Job
+rails generate job Example
+
+-sidekiq
+bundle exec sidekiq -C config/sidekiq.yml
+
+-resque
+QUEUE=post_created rake resque:work
+OR 
+export QUEUE='post_created rake resque:work'
+rake resque:work
