@@ -59,3 +59,5 @@ bundle install
 bin/rails dev:cache
 
 
+#Custom Helpers
+rails generate helper MyCustomHelper

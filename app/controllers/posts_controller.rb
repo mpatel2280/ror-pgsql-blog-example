@@ -6,6 +6,8 @@ class PostsController < ApplicationController
     after_action :log_action, only: [:create, :update, :destroy]
     before_action :set_post, only: [:show, :edit, :update, :destroy]
   
+    helper :my_custom
+    
     # GET /posts
     def index
       @posts = Post.all
