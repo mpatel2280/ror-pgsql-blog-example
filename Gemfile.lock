@@ -1,7 +1,7 @@
 PATH
   remote: hello_gem
   specs:
-    hello_gem (0.1.0)
+    hello_gem (0.2.0)
 
 GEM
   remote: https://rubygems.org/
