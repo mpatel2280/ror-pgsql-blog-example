@@ -8,5 +8,11 @@
   <%= @post.content %>
 </p>
 
+<p>
+  Post Helper -> Published on: <%= post_formatted_date(@post.created_at) %>
+</p>
+
+<p>Custom Helper -> Short format: <%= format_date(@post.created_at, :short) %></p>
+
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>

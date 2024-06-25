@@ -45,6 +45,16 @@ gem "pg"
 
 gem 'hello_gem', path: './hello_gem/'
 
+gem 'sidekiq'
+
+gem 'resque'
+gem 'resque-scheduler', require: 'resque/scheduler'
+
+gem 'rails-observers'
+
+gem 'activerecord-session_store'
+
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 

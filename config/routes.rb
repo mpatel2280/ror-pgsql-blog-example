@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  require 'resque/server'
+  require 'sidekiq/web'
+  
   resources :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -16,5 +20,9 @@ Rails.application.routes.draw do
 
   resources :articles
   resources :posts
+
+  mount Resque::Server.new, at: "/resque"
+  
+  mount Sidekiq::Web => '/sidekiq'
 
 end
