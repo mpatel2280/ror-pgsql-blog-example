@@ -42,7 +42,19 @@ rake db:migrate:down VERSION=20240623155225
 # Rake 
 rake custom:hello
 
+#create models, controllers, views, migrations
+rails generate model User 
+rails generate controller Users
+rails generate view users index
+rails generate migration AddNameToUsers name:string
+
+#run, rollback, verify  migration 
+rails db:migrate
+rails db:migrate:down
+rails c
+
 # Rails Scaffolding
+rails generate scaffold Post title:string content:text
 rails generate scaffold User
 
 #create new gem
@@ -62,6 +74,10 @@ bin/rails dev:cache
 #Custom Helpers
 rails generate helper MyCustomHelper
 
+#Mixin
+Reusable methods inside concenrs directory 
+- app/models/concerns/mixin.rb
+- app/controllers/concerns/mixin.rb
 
 #Job
 rails generate job Example
@@ -74,3 +90,10 @@ QUEUE=post_created rake resque:work
 OR 
 export QUEUE='post_created rake resque:work'
 rake resque:work
+
+
+#Sweeper
+cd app
+mkdir sweepers
+cd sweepers
+touch post_sweeper.rb
