@@ -97,3 +97,8 @@ cd app
 mkdir sweepers
 cd sweepers
 touch post_sweeper.rb
+
+#Middleware lists
+rails middleware 
+
+

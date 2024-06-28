@@ -26,6 +26,9 @@ module Blog
 
     # Use Sidekiq for Active Job
     config.active_job.queue_adapter = :sidekiq
+
+    #Rack Limit
+    config.middleware.use Rack::Attack
     
   end
 end
