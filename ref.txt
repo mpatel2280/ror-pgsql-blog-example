@@ -37,7 +37,7 @@ rake db:migrate
 
 #Migrate Specific file only
 rake db:migrate:up VERSION=20240623155225
-rake db:migrate:down VERSION=20240623155225
+rake db:migrate:down VERSION=20240629130407
 
 # Rake 
 rake custom:hello
@@ -51,6 +51,7 @@ rails generate migration AddNameToUsers name:string
 #run, rollback, verify  migration 
 rails db:migrate
 rails db:migrate:down
+rails db:migrate:status
 rails c
 
 # Rails Scaffolding

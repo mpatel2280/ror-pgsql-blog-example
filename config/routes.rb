@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :comments
+  mount Motor::Admin => '/motor_admin'
 
   require 'resque/server'
   require 'sidekiq/web'
