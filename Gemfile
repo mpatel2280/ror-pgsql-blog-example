@@ -74,8 +74,19 @@ group :development do
   # gem "spring"
 end
 
+group :development do
+  gem 'bullet'
+end
+
+gem 'rack-attack'
+
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "motor-admin", "~> 0.4.27"
+
+#For RabbitMQ
+gem 'bunny'

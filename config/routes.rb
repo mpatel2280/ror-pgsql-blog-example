@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :comments
+  mount Motor::Admin => '/motor_admin'
 
   require 'resque/server'
   require 'sidekiq/web'
@@ -24,5 +26,9 @@ Rails.application.routes.draw do
   mount Resque::Server.new, at: "/resque"
   
   mount Sidekiq::Web => '/sidekiq'
+
+  get 'send_message', to: 'publisher_consumer#publish'
+  get 'receive_message', to: 'publisher_consumer#consume'
+  post 'post_message', to: 'publisher_consumer#publish_post'
 
 end

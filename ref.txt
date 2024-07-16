@@ -37,7 +37,7 @@ rake db:migrate
 
 #Migrate Specific file only
 rake db:migrate:up VERSION=20240623155225
-rake db:migrate:down VERSION=20240623155225
+rake db:migrate:down VERSION=20240629130407
 
 # Rake 
 rake custom:hello
@@ -51,6 +51,7 @@ rails generate migration AddNameToUsers name:string
 #run, rollback, verify  migration 
 rails db:migrate
 rails db:migrate:down
+rails db:migrate:status
 rails c
 
 # Rails Scaffolding
@@ -97,3 +98,32 @@ cd app
 mkdir sweepers
 cd sweepers
 touch post_sweeper.rb
+
+#Middleware lists
+rails middleware 
+
+
+#RabbitMQ
+https://www.svix.com/resources/guides/rabbitmq-ubuntu-install-guide/
+
+sudo apt update
+sudo apt upgrade
+
+wget -O- https://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc | sudo apt-key add -
+echo "deb https://packages.erlang-solutions.com/ubuntu $(lsb_release -cs) contrib" | sudo tee /etc/apt/sources.list.d/erlang.list
+
+sudo apt update
+sudo apt install erlang
+
+echo "deb https://dl.bintray.com/rabbitmq-erlang/debian $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/rabbitmq.list
+wget -O- https://www.rabbitmq.com/rabbitmq-release-signing-key.asc | sudo apt-key add -
+
+sudo apt update
+sudo apt install rabbitmq-server
+sudo systemctl start rabbitmq-server
+sudo systemctl enable rabbitmq-server
+sudo systemctl status rabbitmq-server
+sudo rabbitmq-plugins enable rabbitmq_management
+
+http://localhost:15672/#/
+Default username and password are both guest
