@@ -4,3 +4,4 @@ log/
 log/development.log
 tmp/cache
 tmp/cache/assets/sprockets/
+temp_files/

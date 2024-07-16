@@ -1,0 +1,33 @@
+---
+engine_version: 0.4.27
+file_version: 2024-06-30 05:48:06.040270000 Z
+resources: []
+configs:
+- key: header.links
+  value:
+  - name: "⭐ Star on GitHub"
+    path: https://github.com/motor-admin/motor-admin-rails
+  updated_at: 2024-06-28 13:30:50.308873000 +00:00
+queries:
+- id: 1
+  name: Posts > 5
+  sql_body: SELECT * from posts where id > 5
+  description: Posts > 5
+  preferences:
+    query_type: sql
+    database: primary
+    visualization: table
+    visualization_options: {}
+    variables: []
+  tags: []
+  updated_at: 2024-06-30 05:48:06.040270000 +00:00
+dashboards: []
+forms: []
+alerts: []
+api_configs:
+- id: 1
+  name: origin
+  url: "/"
+  preferences: {}
+  description:
+  updated_at: 2024-06-28 13:30:50.509190000 +00:00

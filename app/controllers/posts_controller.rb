@@ -17,8 +17,9 @@ class PostsController < ApplicationController
   
     # GET /posts/1
     def show
-        @post = Post.find(params[:id])
-        HelloGem.hello_from_gem(@post)
+        # @post = Post.find(params[:id])
+        # HelloGem.hello_from_gem(@post)
+        @comment = @post.comments.build
     end
   
     # GET /posts/new
@@ -28,6 +29,7 @@ class PostsController < ApplicationController
   
     # GET /posts/1/edit
     def edit
+      @comment = @post.comments.build
     end
   
     # POST /posts

@@ -89,6 +89,7 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.7)
       public_suffix (>= 2.0.2, < 7.0)
+    amq-protocol (2.3.2)
     ar_lazy_preload (1.1.2)
       rails (>= 5.2)
     audited (5.6.0)
@@ -103,6 +104,9 @@ GEM
     bullet (7.1.6)
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.11)
+    bunny (2.23.0)
+      amq-protocol (~> 2.3, >= 2.3.1)
+      sorted_set (~> 1, >= 1.0.2)
     cancancan (3.6.1)
     capybara (3.40.0)
       addressable
@@ -235,6 +239,7 @@ GEM
       thor (~> 1.0, >= 1.2.2)
       zeitwerk (~> 2.6)
     rake (13.2.1)
+    rbtree (0.4.6)
     rdoc (6.7.0)
       psych (>= 4.0.0)
     redis (5.2.0)
@@ -268,6 +273,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    set (1.1.0)
     sidekiq (7.2.4)
       concurrent-ruby (< 2)
       connection_pool (>= 2.3.0)
@@ -279,6 +285,9 @@ GEM
       rack-protection (= 4.0.0)
       rack-session (>= 2.0.0, < 3)
       tilt (~> 2.0)
+    sorted_set (1.0.3)
+      rbtree
+      set (~> 1.0)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -323,6 +332,7 @@ DEPENDENCIES
   activerecord-session_store
   bootsnap
   bullet
+  bunny
   capybara
   debug
   hello_gem!
