@@ -90,3 +90,5 @@ gem "motor-admin", "~> 0.4.27"
 
 #For RabbitMQ
 gem 'bunny'
+
+gem "tailwindcss-rails"
