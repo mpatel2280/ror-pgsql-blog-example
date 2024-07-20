@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :authors
+  resources :books
   resources :comments
   mount Motor::Admin => '/motor_admin'
 

@@ -54,6 +54,10 @@ rails db:migrate:down
 rails db:migrate:status
 rails c
 
+rails generate migration AddBooksToAuthors book:references
+rails generate migration AddAuthorsToBooks author:references
+
+
 # Rails Scaffolding
 rails generate scaffold Post title:string content:text
 rails generate scaffold User
@@ -127,3 +131,8 @@ sudo rabbitmq-plugins enable rabbitmq_management
 
 http://localhost:15672/#/
 Default username and password are both guest
+
+
+#tailwind
+https://tailwindcss.com/docs/guides/ruby-on-rails
+https://github.com/rails/tailwindcss-rails
