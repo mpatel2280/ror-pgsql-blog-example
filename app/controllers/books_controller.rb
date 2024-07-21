@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: %i[ show edit update destroy ]
+  before_action :set_book, only: %i[ show edit update destroy]
 
   # GET /books or /books.json
   def index
@@ -55,6 +55,17 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to books_url, notice: "Book was successfully destroyed." }
+      format.json { head :no_content }
+    end
+  end
+
+  # Restore a soft-deleted record 
+  # GET /books/1 or /books/1.json
+  def restore
+    deleted_book = Book.with_deleted.find(params[:id])
+    deleted_book.restore
+    respond_to do |format|
+      format.html { redirect_to books_url, notice: "Book was successfully restored." }
       format.json { head :no_content }
     end
   end
