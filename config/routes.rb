@@ -33,4 +33,6 @@ Rails.application.routes.draw do
   get 'receive_message', to: 'publisher_consumer#consume'
   post 'post_message', to: 'publisher_consumer#publish_post'
 
+  get 'books_restore/:id', to: 'books#restore'
+
 end

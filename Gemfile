@@ -92,3 +92,6 @@ gem "motor-admin", "~> 0.4.27"
 gem 'bunny'
 
 gem "tailwindcss-rails"
+
+#For Soft delete
+gem 'paranoia', '~> 2.4'
