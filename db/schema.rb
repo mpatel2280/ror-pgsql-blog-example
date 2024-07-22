@@ -26,7 +26,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_21_055854) do
     t.text "bio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "book_id", null: false
+    t.bigint "book_id", null: true
     t.index ["book_id"], name: "index_authors_on_book_id"
   end
 
