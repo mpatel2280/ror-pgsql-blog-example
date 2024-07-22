@@ -23,7 +23,7 @@ class Rack::Attack
     # end
   
     # Custom response for throttled requests
-    self.throttled_response = lambda do |env|
+    self.throttled_responder = lambda do |env|
       now = Time.now.utc
       match_data = env['rack.attack.match_data']
   
