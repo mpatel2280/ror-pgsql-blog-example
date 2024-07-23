@@ -1,6 +1,9 @@
 class BooksController < ApplicationController
   before_action :set_book, only: %i[ show edit update destroy]
   before_action :log_service
+  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+  #rescue_from StandardError, with: :internal_server_error
+
 
   # GET /books or /books.json
   def index
@@ -86,6 +89,18 @@ class BooksController < ApplicationController
     #Log service
     def log_service
       @log_service ||= LogService.new
+    end
+
+    #Exception 404
+    def record_not_found
+      render plain: '404 Not Found', status: 404
+    end
+
+    #Exception 500
+    def internal_server_error(exception)
+      logger.error(exception.message)
+      logger.error(exception.backtrace.join("\n"))
+      render plain: '500 Internal Server Error', status: 500
     end
   
 end
