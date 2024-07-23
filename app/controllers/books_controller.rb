@@ -9,12 +9,13 @@ class BooksController < ApplicationController
   def index
     # @books = Book.all
     # @books = Book.all.order(created_at: :desc)
-    @books = Book.includes(:authors).all.order(created_at: :desc).load_async
+    # @books = Book.includes(:authors).all.order(created_at: :desc).load_async
+    @books = Book.cached_all
   end
 
   # GET /books/1 or /books/1.json
   def show
-    byebug
+    #byebug
     log_service.info("Showing book with ID: #{@book.id}", ["BOOK_SHOW"])
   end
 

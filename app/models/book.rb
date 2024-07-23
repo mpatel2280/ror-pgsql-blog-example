@@ -6,4 +6,11 @@ class Book < ApplicationRecord
     %w(title content).each do |attribute|
         validates attribute, presence: true
     end
+
+    #Cache
+    def self.cached_all
+        Rails.cache.fetch('all_books', expires_in: 12.hours) do
+          Book.all.to_a
+        end
+    end
 end
