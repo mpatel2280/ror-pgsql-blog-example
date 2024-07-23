@@ -7,3 +7,5 @@ tmp/cache/assets/sprockets/
 temp_files/
 
 public/assets/
+
+.byebug_history

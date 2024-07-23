@@ -100,3 +100,6 @@ gem 'paranoia', '~> 2.4'
 group :development do
   gem 'bundler-audit', require: false
 end
+
+# Debug
+gem 'byebug', group: :development
