@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
   before_action :set_book, only: %i[ show edit update destroy]
+  before_action :log_service
 
   # GET /books or /books.json
   def index
@@ -10,6 +11,7 @@ class BooksController < ApplicationController
 
   # GET /books/1 or /books/1.json
   def show
+    log_service.info("Showing book with ID: #{@book.id}", ["BOOK_SHOW"])
   end
 
   # GET /books/new
@@ -80,4 +82,10 @@ class BooksController < ApplicationController
     def book_params
       params.require(:book).permit(:title, :content)
     end
+
+    #Log service
+    def log_service
+      @log_service ||= LogService.new
+    end
+  
 end

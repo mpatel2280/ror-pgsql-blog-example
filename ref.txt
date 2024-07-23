@@ -10,7 +10,7 @@ sudo apt install sqlite3
 sqlite3 --version
 3.45.1 2024-01-30 16:01:20 e876e51a0ed5c5b3126f52e532044363a014bc594cfefa87ffb5b82257ccalt1 (64-bit)
 
-
+rails new <project_name>
 
 gem install rails (if err then try -> sudo apt install ruby-railties)
 rails --version
@@ -136,3 +136,6 @@ Default username and password are both guest
 #tailwind
 https://tailwindcss.com/docs/guides/ruby-on-rails
 https://github.com/rails/tailwindcss-rails
+
+# checks for vulnerable versions of gems
+bundle exec bundler-audit check

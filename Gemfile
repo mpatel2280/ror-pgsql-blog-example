@@ -95,3 +95,8 @@ gem "tailwindcss-rails"
 
 #For Soft delete
 gem 'paranoia', '~> 2.4'
+
+# Gemfile
+group :development do
+  gem 'bundler-audit', require: false
+end
