@@ -9,8 +9,8 @@ class BooksController < ApplicationController
   def index
     # @books = Book.all
     # @books = Book.all.order(created_at: :desc)
-    # @books = Book.includes(:authors).all.order(created_at: :desc).load_async
-    @books = Book.cached_all
+    @books = Book.includes(:authors).all.order(created_at: :desc).load_async
+    # @books = Book.cached_all
   end
 
   # GET /books/1 or /books/1.json

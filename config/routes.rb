@@ -35,4 +35,6 @@ Rails.application.routes.draw do
 
   get 'books_restore/:id', to: 'books#restore'
 
+  get 'system_stats', to: 'system_stats#index'
+
 end
