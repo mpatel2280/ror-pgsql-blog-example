@@ -9,3 +9,5 @@ temp_files/
 public/assets/
 
 .byebug_history
+
+script_run/

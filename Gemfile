@@ -103,3 +103,7 @@ end
 
 # Debug
 gem 'byebug', group: :development
+
+
+# System details
+gem 'sys-proctable'
