@@ -139,3 +139,10 @@ https://github.com/rails/tailwindcss-rails
 
 # checks for vulnerable versions of gems
 bundle exec bundler-audit check
+
+
+#OpenTelemetry
+https://opentelemetry.io/docs/what-is-opentelemetry/
+bundle add opentelemetry-sdk opentelemetry-instrumentation-all
+env OTEL_TRACES_EXPORTER=console rails server -p 8080
+
