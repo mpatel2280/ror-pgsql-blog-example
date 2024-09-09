@@ -107,3 +107,6 @@ gem 'byebug', group: :development
 
 # System details
 gem 'sys-proctable'
+
+gem "opentelemetry-sdk", "~> 1.5"
+gem "opentelemetry-instrumentation-all", "~> 0.63.0"
