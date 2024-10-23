@@ -3,13 +3,13 @@
 
  <%= @post.title %>
  <br>
- <%= @post.text %>
+ <%= @post.content %>
  <br>
 
  <b>Comments</b>
  <br>
- <%- @post.comments.each do |comment|%>
-   <%= comment.text%>
+ <%= @post.comments.each do |comment|%>
+   <%= @comment.text%>
    <br>
  <% end %>
 
